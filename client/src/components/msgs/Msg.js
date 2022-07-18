@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
-import axios from axios;
+import axios from 'axios';
 
 const Msg = () => {
   const [sms_message, setMsg] = useState({ mobile_number: '', message: '' })
 
   const textMsg = () => {
-    axios.post('/api/', { sms_message })
+    axios.post('/api/sms_messages', { sms_message })
       .then( res => {
         console.log(res)
       })

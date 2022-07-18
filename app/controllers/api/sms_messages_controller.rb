@@ -1,6 +1,3 @@
-# require 'twilio-ruby'
-# require '../../../env'
-
 class Api::SmsMessagesController < ApplicationController
   def create
     client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']) 
@@ -11,7 +8,8 @@ class Api::SmsMessagesController < ApplicationController
       body: sms_message_params['message']
     )
 
-    render json: client
+    
+    render json: { message: 'Text Message Sent' }
   end
 
   private

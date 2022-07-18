@@ -4,7 +4,7 @@ import Msg from './components/msgs/Msg';
 const App = () => (
   <>
     <Routes>
-      <Route path='/' element={Msg} />
+      <Route path='/' element={<Msg />} />
     </Routes>
   </>
 )
